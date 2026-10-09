@@ -1,141 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/page_toast"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Задание 1. Toast"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp" />
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/page_log"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Задание 2. Логирование"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp" />
+
+            <EditText
+                android:id="@+id/editTextLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите текст"
+                android:inputType="text"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/button_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Логирование Log" />
+
+            <Button
+                android:id="@+id/button_timber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Логирование Timber" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/page_attributes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Задание 3. Атрибуты"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="25dp" />
+
+            <EditText
+                android:id="@+id/editTextAttributes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sample Text"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:layout_marginBottom="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Черный текст" />
+
+                <Button
+                    android:id="@+id/button_red"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Красный текст" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_size_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Размер 8sp" />
+
+                <Button
+                    android:id="@+id/button_size_24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Размер 24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Белый фон" />
+
+                <Button
+                    android:id="@+id/button_yellow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Желтый фон" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. Toast"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+        android:orientation="horizontal"
+        android:padding="6dp">
 
         <Button
-            android:id="@+id/button_ok"
-            android:layout_width="match_parent"
+            android:id="@+id/nav_toast"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="OK"
-            android:layout_marginBottom="28dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Логирование"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <EditText
-            android:id="@+id/editTextLog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Введите текст"
-            android:inputType="text"
-            android:layout_marginBottom="10dp" />
+            android:layout_weight="1"
+            android:text="Toast" />
 
         <Button
-            android:id="@+id/button_log"
-            android:layout_width="match_parent"
+            android:id="@+id/nav_log"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Логирование Log" />
+            android:layout_weight="1"
+            android:text="Log" />
 
         <Button
-            android:id="@+id/button_timber"
-            android:layout_width="match_parent"
+            android:id="@+id/nav_attributes"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Логирование Timber"
-            android:layout_marginBottom="28dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. Атрибуты"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <EditText
-            android:id="@+id/editTextAttributes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sample Text"
-            android:textSize="18sp"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_black"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Черный текст" />
-
-            <Button
-                android:id="@+id/button_red"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Красный текст" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_size_8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Размер 8sp" />
-
-            <Button
-                android:id="@+id/button_size_24"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Размер 24sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_white"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Белый фон" />
-
-            <Button
-                android:id="@+id/button_yellow"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Желтый фон" />
-
-        </LinearLayout>
+            android:layout_weight="1"
+            android:text="Атрибуты" />
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>

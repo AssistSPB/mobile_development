@@ -3,6 +3,7 @@ package com.example.toasthandler
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -15,10 +16,46 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 1. Toast
-        val buttonOk = findViewById<Button>(R.id.button_ok)
+        val pageToast = findViewById<View>(R.id.page_toast)
+        val pageLog = findViewById<View>(R.id.page_log)
+        val pageAttributes = findViewById<View>(R.id.page_attributes)
+
+        val navToast = findViewById<Button>(R.id.nav_toast)
+        val navLog = findViewById<Button>(R.id.nav_log)
+        val navAttributes = findViewById<Button>(R.id.nav_attributes)
+
+        fun showPage(page: Int) {
+
+            pageToast.visibility =
+                if (page == 1) View.VISIBLE else View.GONE
+
+            pageLog.visibility =
+                if (page == 2) View.VISIBLE else View.GONE
+
+            pageAttributes.visibility =
+                if (page == 3) View.VISIBLE else View.GONE
+        }
+
+        navToast.setOnClickListener {
+            showPage(1)
+        }
+
+        navLog.setOnClickListener {
+            showPage(2)
+        }
+
+        navAttributes.setOnClickListener {
+            showPage(3)
+        }
+
+        // При запуске показываем Toast
+        showPage(1)
+
+        val buttonOk =
+            findViewById<Button>(R.id.button_ok)
 
         buttonOk.setOnClickListener {
+
             Toast.makeText(
                 this,
                 "Кнопка ОК",
@@ -26,16 +63,21 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
 
-        // 2. Log и Timber
-        val editTextLog = findViewById<EditText>(R.id.editTextLog)
-        val buttonLog = findViewById<Button>(R.id.button_log)
-        val buttonTimber = findViewById<Button>(R.id.button_timber)
+        val editTextLog =
+            findViewById<EditText>(R.id.editTextLog)
+
+        val buttonLog =
+            findViewById<Button>(R.id.button_log)
+
+        val buttonTimber =
+            findViewById<Button>(R.id.button_timber)
 
         if (Timber.treeCount == 0) {
             Timber.plant(Timber.DebugTree())
         }
 
         buttonLog.setOnClickListener {
+
             val text = editTextLog.text.toString()
 
             Log.v(
@@ -45,11 +87,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonTimber.setOnClickListener {
+
             val text = editTextLog.text.toString()
+
             Timber.v(text)
         }
 
-        // 3. Атрибуты
         val editTextAttributes =
             findViewById<EditText>(R.id.editTextAttributes)
 
@@ -70,6 +113,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonYellow =
             findViewById<Button>(R.id.button_yellow)
+
 
         buttonBlack.setOnClickListener {
             editTextAttributes.setTextColor(Color.BLACK)
