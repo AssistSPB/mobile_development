@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">LinearLayout</string>
+
+    <string name="student_name">Унгефуг Никита ПИ-251</string>
+
+    <string name="poem_english">If bears were bees,\nThey would never care\nNever even think\nOf building their home so high!</string>
+
+    <string name="app_icon_description">Иконка приложения</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="lorem_ipsum">Lorem ipsum</string>
+
+</resources>
